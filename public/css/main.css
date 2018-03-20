@@ -1,0 +1,284 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.vertical-align, body > nav, body > nav a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.draw-border, .btn {
+  box-shadow: inset 0 0 0 2px #8b98a3;
+  color: #8b98a3;
+  transition: color 0.25s 0.08333s;
+  position: relative; }
+  .draw-border::before, .btn::before, .draw-border::after, .btn::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0; }
+  .draw-border::before, .btn::before {
+    border-bottom-width: 2px;
+    border-left-width: 2px; }
+  .draw-border::after, .btn::after {
+    border-top-width: 2px;
+    border-right-width: 2px; }
+  .draw-border:hover, .btn:hover {
+    color: #000; }
+    .draw-border:hover::before, .btn:hover::before, .draw-border:hover::after, .btn:hover::after {
+      border-color: #000;
+      transition: border-color 0s, width 0.25s, height 0.25s;
+      width: 100%;
+      height: 100%; }
+    .draw-border:hover::before, .btn:hover::before {
+      transition-delay: 0s, 0s, 0.25s; }
+    .draw-border:hover::after, .btn:hover::after {
+      transition-delay: 0s, 0.25s, 0s; }
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  letter-spacing: 0.05rem;
+  margin: 1em;
+  color: #586570; }
+  .btn:focus {
+    outline: 0.5px solid #ffe593; }
+
+.btn-secondary {
+  box-shadow: inset 0 0 0 2px #77e4cd;
+  color: #77e4cd;
+  transition: color 0.25s 0.08333s;
+  position: relative; }
+  .btn-secondary::before, .btn-secondary::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0; }
+  .btn-secondary::before {
+    border-bottom-width: 2px;
+    border-left-width: 2px; }
+  .btn-secondary::after {
+    border-top-width: 2px;
+    border-right-width: 2px; }
+  .btn-secondary:hover {
+    color: #28cdaa; }
+    .btn-secondary:hover::before, .btn-secondary:hover::after {
+      border-color: #28cdaa;
+      transition: border-color 0s, width 0.25s, height 0.25s;
+      width: 100%;
+      height: 100%; }
+    .btn-secondary:hover::before {
+      transition-delay: 0s, 0s, 0.25s; }
+    .btn-secondary:hover::after {
+      transition-delay: 0s, 0.25s, 0s; }
+
+h1 {
+  margin-bottom: 1em; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  font-family: 'Roboto', sans-serif;
+  padding: 100px;
+  color: #586570;
+  /* for custom scrollbar for webkit browser*/ }
+  body > nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #28cdaa;
+    width: 100%;
+    z-index: 10;
+    height: 66px;
+    overflow: hidden;
+    font-size: 10pt;
+    padding: 0 16px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 0 2px; }
+    body > nav a {
+      text-decoration: none; }
+      body > nav a img {
+        width: 33px; }
+      body > nav a .logo-text {
+        font-size: 16pt;
+        line-height: 20pt;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-left: 5px; }
+  body .data-paste textarea {
+    width: 98%;
+    padding: 5px;
+    border: 1px solid #e0e4e7; }
+  body table {
+    width: 100%;
+    table-layout: fixed; }
+    body table .dupe * {
+      color: #c4cbd0 !important; }
+  body .tbl-header {
+    background-color: #a1eddd; }
+    body .tbl-header th {
+      padding: 20px 15px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 12px;
+      color: #586570;
+      text-transform: uppercase; }
+  body .tbl-content {
+    max-height: 300px;
+    min-height: 50px;
+    overflow-x: auto;
+    margin-top: 0px;
+    border: 1px solid #e0e4e7; }
+  body td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: #586570;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1); }
+  body ::-webkit-scrollbar {
+    width: 6px; }
+  body ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+  body ::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }

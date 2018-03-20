@@ -1,0 +1,26 @@
+{
+  "name": "bokiofrontend",
+  "version": "1.0.0",
+  "description": "Bokio Frontend",
+  "main": "app.js",
+  "scripts": {
+    "build-js": "babel appDev.js -w -o app.js",
+    "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css",
+    "watch": "npm run build-js && nodemon -e js -x \"npm run build-css\""
+  },
+  "author": "Nikhil John <nikhil.john.88@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.2"
+  },
+  "dependencies": {}
+}

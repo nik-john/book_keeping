@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <title>Bokio front-end test</title>
+  <meta name="description" content="Bokio front-end test" />
+
+    <link rel="stylesheet" href="public/css/main.css?v=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">   
+</head>
+
+<body ng-app="app" ng-controller="main">
+    <nav>
+        <a href="#/" class="logo">
+            <img src="https://app.bokio.se/Content/gphx/logo-green-small.png">
+            <span class="logo-text"><font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Bokio</font></font></span>
+        </a>
+    </nav>
+    <div>
+        <h1>Bokio Bank Import</h1>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>Description</td>
+                        <td>Amount</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr ng-repeat="t in vd.transactionList">
+                        <td>{{t.date}}</td>
+                        <td>{{t.text}}</td>
+                        <td>{{t.amount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            <button class="btn btn-secondary" ng-click="vd.addSample()">Add sample transaction</button>
+        </p>
+    </div>
+    <section class="data-paste">
+        <form>
+            <textarea name="text" id="text" rows="10" placeholder="Paste your Bank Data.."></textarea>
+            <button type="submit" class="btn" onclick="return submitDataForParsing()">Submit</button>
+        </form>
+    </section>
+    <section class="data-process">
+        <h1>Processed Data</h1>
+        <form id="parsed">
+            <input type="hidden" id="raw-data">
+            <input type="hidden" id="parsed-data">
+            <div id="parsed-table-container">
+                <div class="tbl-header placeholder">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <button type="button" class="btn" onclick="return saveData()">Save</button>
+        </form>
+    </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
