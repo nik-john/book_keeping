@@ -19,3 +19,35 @@ After the data is analysed, the user will bookkeep one bank row at the time. The
  - If Bokio doesn’t understand the paste perfectly the user might need to change the columns
  - If there are duplicates in the paste then the user might want to choose not to ignore the rows
 Bokio thinks should be ignored.
+
+### Notes
+    
+#### Features:
+
+    • The user wants to see what they have saved before
+    • The user wants to be able to save a new bank data paste
+    • If Bokio doesn’t understand the paste perfectly the user might need to change the columns
+    • If there are duplicates in the paste then the user might want to choose not to ignore the rows
+        Bokio thinks should be ignored.
+
+ #### Highlights/Enhancements:
+
+    • Application is completely Responsive and uses the lates and greatest CSS, including FlexBox & KeyFrames
+    • Introduced SCSS
+    • Introduced ES6, ES7 using Babel
+    • Used async/await functions and native Promises
+    • Maximum functional programming (map, filter etc.)
+    • Reset CSS for cross browser consistency
+    • Instant feedback through Flash Messages
+    • No libraries used. Everything has been coded from scratch
+    • Tested for multiple data sets
+    • CSS animations on Buttons and Flash messages for Rich UX
+    • Error handling has been implemente for all major use cases
+    • Made the Angular App long poll for data, so that page reload can be avoided
+
+
+####  TODOs/Nice-to-haves:
+
+    • Commit column change to API
+    • Implement the Book Keeping on a Modal instead of block tables
+    • Use more Icons and lesser Text
