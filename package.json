@@ -6,7 +6,7 @@
   "scripts": {
     "build-js": "babel appDev.js -w -o app.js",
     "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css",
-    "watch": "npm run build-js && nodemon -e js -x \"npm run build-css\""
+    "watch-css": "nodemon -e js -x \"npm run build-css\""
   },
   "author": "Nikhil John <nikhil.john.88@gmail.com>",
   "license": "ISC",

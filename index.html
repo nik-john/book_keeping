@@ -8,9 +8,14 @@
 
     <link rel="stylesheet" href="public/css/main.css?v=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">   
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 
 <body ng-app="app" ng-controller="main">
+    <nav class="flash">
+        <span class="message"></span>
+    </nav>
     <nav>
         <a href="#/" class="logo">
             <img src="https://app.bokio.se/Content/gphx/logo-green-small.png">
@@ -24,9 +29,9 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
-                        <td>Date</td>
-                        <td>Description</td>
-                        <td>Amount</td>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
                     </tr>
                 </thead>
             </table>
@@ -57,20 +62,23 @@
         <form id="parsed">
             <input type="hidden" id="raw-data">
             <input type="hidden" id="parsed-data">
+            <input type="hidden" id="ignored-data">
             <div id="parsed-table-container">
                 <div class="tbl-header placeholder">
                     <table cellpadding="0" cellspacing="0" border="0">
                         <thead>
                             <tr>
-                                <th></th>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Amount</th>
                             </tr>
                         </thead>
                     </table>
                 </div>
-                <div class="tbl-content">
+                <div class="tbl-content" style="text-align: center;padding-top: 30px;">
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tbody>
-                            <tr></tr>
+                            <tr>No Data </tr>
                         </tbody>
                     </table>
                 </div>
@@ -78,6 +86,20 @@
             <button type="button" class="btn" onclick="return saveData()">Save</button>
         </form>
     </section>
+    <footer>
+        Crafted with &hearts; by Nikhil John 
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/nikjohn/">LinkedIn</a>
+            </li>
+            <li>
+                <a href="https://github.com/nik-john">GitHub</a>
+            </li>
+            <li>
+                <a href="https://medium.com/@nikjohn">Medium</a>
+            </li>
+        </ul>
+    </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
   <script src="app.js"></script>
 </body>

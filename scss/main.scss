@@ -141,8 +141,8 @@ $white: #fff;
 $gold: #ffe593;
 $text-grey: #586570;
 $black: #000;
-
-
+$deep-blue: #34449c;
+$red: rgb(199, 54, 54);;
 .vertical-align {
     display: flex;
     align-items: center;
@@ -214,15 +214,57 @@ $black: #000;
     }
     @extend .draw-border;
 }
+
 .btn-secondary {
-    @include btn-border-drawing(lighten($bokioGreen, 20%), $bokioGreen, 2px, bottom, right);    
+    @include btn-border-drawing(lighten($bokioGreen, 20%), $bokioGreen, 2px, bottom, right);
 }
 
 // Heading styles
-
 h1 {
     margin-bottom: 1em;
 }
+
+// Flash message styles
+@mixin transition($transition: all .5s ease) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition;
+}
+
+.flash {
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 55px;
+    left: 0;
+    height: 0;
+    color: $white;
+    @include transition();
+    background: transparent;
+    box-shadow: none;
+    &.showing {
+        height: 50px;
+    }
+    .message {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 0 0 4px 4px;
+        &.success {
+            background-color: #58b858;
+        }
+        &.error {
+            background-color: $red;
+        }
+    }
+}
+
 // Page styles
 body {
     font-family: 'Roboto', sans-serif;
@@ -230,7 +272,7 @@ body {
     font-family: 'Roboto', sans-serif;
     padding: 100px;
     color: $text-grey;
-    > nav {
+    >nav {
         position: fixed;
         top: 0;
         left: 0;
@@ -263,15 +305,38 @@ body {
     .data-paste {
         textarea {
             width: 98%;
-            padding: 5px;
-            border: 1px solid lighten($text-grey, 50%); 
+            padding: 10px;
+            border: 1px solid lighten($text-grey, 50%);
         }
     }
     table {
         width: 100%;
         table-layout: fixed;
-        .dupe * {
-            color: lighten($text-grey, 40%) !important;
+        tr {
+            position: relative;
+            &.dupe {
+                td {
+                    color: lighten($text-grey, 40%) !important;
+                }
+                &:hover {
+                    color: darken($text-grey, 40%) !important;
+                    background: $gold;
+                    &:before {
+                        position: relative;
+                        content: 'Add duplicate row?';
+                        margin: 15px auto;
+                        padding-left: 5px;
+                        font-weight: 700;
+                        color: $white;
+                        display: flex;
+                        background: $deep-blue;
+                        padding: 5px;
+                        font-size: 0.9em;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                }
+            }
         }
     }
     .tbl-header {
@@ -283,6 +348,11 @@ body {
             font-size: 12px;
             color: $text-grey;
             text-transform: uppercase;
+            select {
+                border-radius: 0px;
+                border: 0px;
+                background: $white;
+            }
         }
     }
     .tbl-content {
@@ -310,5 +380,31 @@ body {
     }
     ::-webkit-scrollbar-thumb {
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    footer {
+        border-top: 1px solid lighten($text-grey, 40%);
+        padding: 20px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.8em;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $white;
+        ul {
+            li {
+                float: left;
+                margin-right: 10px;
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        color: $bokioGreen;
+                    }
+                }
+            }
+        }
     }
 }
