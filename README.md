@@ -51,3 +51,4 @@ Bokio thinks should be ignored.
     • Commit column change to API
     • Implement the Book Keeping on a Modal instead of block tables
     • Use more Icons and lesser Text
+    • Make site responsive for smaller devices. I deliberately did not concentrate on smaller form factors as I assumed that because this is such a data heavy web app, not a lot of people would access it from mobile devices. The app is usable, but could use some more love in terms of mobile use.
